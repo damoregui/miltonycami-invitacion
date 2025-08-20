@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom from original page */
+.custom-div { position: absolute; bottom: 20px; left: 45%; transform: translate(-50%); z-index: 20; animation: bounceUp 2s infinite; }
+::-webkit-scrollbar { width: .5px; height: 6px }
+::-webkit-scrollbar-track { background: #fffcf4; border-radius: 3px }
+::-webkit-scrollbar-thumb { background: silver; border-radius: 3px }
+::-webkit-scrollbar-thumb:hover { background: #888 }
+
+/* Reveal effect */
+.reveal-init { opacity: 0; transform: var(--reveal-transform, scale(0.5)); }
+.revealed { opacity: 1 !important; transform: none !important; transition: opacity .6s ease, transform .6s ease; }
+
+html {
+  scroll-behavior: smooth;
+}
