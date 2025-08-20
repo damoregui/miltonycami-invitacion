@@ -40,39 +40,6 @@ function useReveal() {
   }, [])
 }
 
-React.useEffect(() => {
-  const a = audioRef.current;
-  if (!a) return;
-
-  // Intento inicial (por si el navegador lo permite)
-  const tryImmediate = async () => {
-    try {
-      await a.play();
-      a.muted = false; // desmuteamos si pudo empezar
-    } catch {
-      // Si el autoplay fue bloqueado, esperamos la PRIMER interacción
-      const start = async () => {
-        try {
-          a.muted = false;
-          await a.play();
-        } catch {}
-      };
-      // listeners "once" para mobile/desktop
-      const opts = { once: true, passive: true };
-      document.addEventListener('touchstart', start, opts);
-      document.addEventListener('click', start, opts);
-
-      // Limpieza si el componente se desmonta antes
-      return () => {
-        document.removeEventListener('touchstart', start);
-        document.removeEventListener('click', start);
-      };
-    }
-  };
-
-  return tryImmediate();
-}, []);
-
 // ---- Components ----
 export default function App() {
   useReveal()
