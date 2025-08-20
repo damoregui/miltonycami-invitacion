@@ -53,6 +53,36 @@ export default function App() {
     if (playing) tryPlay(); else a.pause()
   }, [playing])
 
+    React.useEffect(() => {
+    const a = audioRef.current;
+    if (!a) return;
+
+    const tryImmediate = async () => {
+      try {
+        await a.play();
+        a.muted = false; // si arranca, desmuteamos
+      } catch {
+        // si el navegador bloquea, esperamos el primer tap/click
+        const start = async () => {
+          try {
+            a.muted = false;
+            await a.play();
+          } catch {}
+        };
+        const opts = { once: true, passive: true };
+        document.addEventListener("touchstart", start, opts);
+        document.addEventListener("click", start, opts);
+
+        return () => {
+          document.removeEventListener("touchstart", start);
+          document.removeEventListener("click", start);
+        };
+      }
+    };
+
+    return tryImmediate();
+  }, []);
+
   // >>> agregado: estado del modal de datos bancarios
   const [bankOpen, setBankOpen] = React.useState(false)
   // <<<
