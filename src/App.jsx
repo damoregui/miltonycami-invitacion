@@ -112,7 +112,7 @@ export default function App() {
       <section className="max-w-full relative p-8">
         <div className="pb-2">
           <div data-animate="reveal" style={{display:'none'}}>
-            <p className="text-center flex justify-center items-center font-principal uppercase text-[#333] text-base pb-1">Nuestra Historia</p>
+            <p className="text-center flex justify-center items-center font-principal uppercase text-[#333] text-base pb-1">Nuestra Historia </p>
           </div>
           <div className="overflow-hidden w-full">
 <div className="flex animate-scroll m-2 flex-shrink-0 h-full w-[250px]">
