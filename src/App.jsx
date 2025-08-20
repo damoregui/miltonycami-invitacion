@@ -1,4 +1,5 @@
 import React from 'react'
+import { INVITATIONS } from './invitations'
 
 // Countdown target
 const TARGET = '2026-02-14T21:00:00'
@@ -40,8 +41,127 @@ function useReveal() {
   }, [])
 }
 
-// ---- Components ----
+/* ============================
+   GATE WRAPPER (Pantalla 1 + Pantalla 2)
+============================ */
 export default function App() {
+  const [step, setStep] = React.useState(1)
+  const [code, setCode] = React.useState("")
+  const [data, setData] = React.useState(null)
+  const [error, setError] = React.useState("")
+
+  const normalize = (raw) =>
+    raw.toUpperCase().replace(/\s+/g, "").replace(/[^A-Z0-9]/g, "")
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    const normalized = normalize(code)
+    const match = INVITATIONS[normalized]
+    if (!match) {
+      setError("Código inexistente. Intenta de nuevo")
+      setData(null)
+      setStep(1)
+      return
+    }
+    setError("")
+    setCode(normalized)
+    setData(match)
+    setStep(2)
+  }
+
+  function handleConfirm() {
+    setStep(3)
+  }
+
+  function handleChangeCode() {
+    setCode("")
+    setData(null)
+    setStep(1)
+  }
+
+  // Pantalla 1: Ingresar código
+  if (step === 1) {
+    return (
+      <div className="min-h-screen grid place-items-center bg-[#f5f6fa] p-6">
+        <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-6">
+          <h1 className="text-center text-2xl font-bold text-[#333] mb-2">Ingresá tu código de invitación</h1>
+          <form onSubmit={handleSubmit} className="grid gap-3">
+            <input
+              type="text"
+              placeholder="Ej: CYM000"
+              autoFocus
+              value={code}
+              onChange={(e) => setCode(e.target.value)}
+              className="w-full border border-gray-200 rounded-xl outline-none px-4 py-3 focus:ring-4 focus:ring-[rgba(70,84,159,0.25)] focus:border-[#46549f]"
+            />
+            {!!error && <p className="text-sm text-red-600">{error}</p>}
+            <button type="submit" className="bg-[#46549f] hover:bg-[#3c488b] text-white font-semibold rounded-xl py-3">
+              Continuar
+            </button>
+          </form>
+        </div>
+      </div>
+    )
+  }
+
+  // Pantalla 2: Confirmación
+if (step === 2 && data) {
+  const formatNames = (names) => {
+    if (names.length === 1) return names[0];
+    if (names.length === 2) return names.join(" y ");
+    return `${names.slice(0, -1).join(", ")} y ${names[names.length - 1]}`;
+  };
+
+  const namesLine = formatNames(data.names);
+
+  return (
+    <div className="min-h-screen grid place-items-center bg-[#f5f6fa] p-6">
+      <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-6 text-center">
+        <h2 className="text-2xl font-bold text-[#333]">{namesLine}</h2>
+        <p className="text-gray-600 mt-1">
+          ¡Esperamos que puedan acompañarnos en este fiestón!
+        </p>
+
+        <div className="grid grid-cols-2 gap-3 my-5">
+          <div>
+            <span className="block text-gray-500 text-sm">Nro de invitados</span>
+            <span className="block font-bold text-lg text-[#333]">
+              {data.count}
+            </span>
+          </div>
+          <div>
+            <span className="block text-gray-500 text-sm">Código</span>
+            <span className="block font-bold text-lg text-[#333]">{code}</span>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 gap-3">
+          <button
+            onClick={handleChangeCode}
+            className="border border-[#46549f] text-[#46549f] rounded-xl py-2 hover:bg-gray-50"
+          >
+            Cambiar código
+          </button>
+          <button
+            onClick={handleConfirm}
+            className="bg-[#46549f] text-white rounded-xl py-2 hover:bg-[#3c488b]"
+          >
+            Entrar
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+  // Paso 3: mostrar tu App original completa
+  return <OriginalApp />
+}
+
+/* ============================
+   TU APP ORIGINAL (contenido intacto)
+============================ */
+function OriginalApp() {
   useReveal()
 
   const audioRef = React.useRef(null)
@@ -53,35 +173,44 @@ export default function App() {
     if (playing) tryPlay(); else a.pause()
   }, [playing])
 
-    React.useEffect(() => {
-    const a = audioRef.current;
-    if (!a) return;
+React.useEffect(() => {
+  const a = audioRef.current;
+  if (!a) return;
 
-    const tryImmediate = async () => {
-      try {
-        await a.play();
-        a.muted = false; // si arranca, desmuteamos
-      } catch {
-        // si el navegador bloquea, esperamos el primer tap/click
-        const start = async () => {
-          try {
-            a.muted = false;
-            await a.play();
-          } catch {}
-        };
-        const opts = { once: true, passive: true };
-        document.addEventListener("touchstart", start, opts);
-        document.addEventListener("click", start, opts);
+  let removeListeners = null; // guardamos el cleanup aquí
 
-        return () => {
-          document.removeEventListener("touchstart", start);
-          document.removeEventListener("click", start);
-        };
-      }
-    };
+  const tryImmediate = async () => {
+    try {
+      await a.play();
+      a.muted = false; // si arranca, desmuteamos
+    } catch {
+      // si el navegador bloquea, esperamos el primer tap/click
+      const start = async () => {
+        try {
+          a.muted = false;
+          await a.play();
+        } catch {}
+      };
+      const opts = { once: true, passive: true };
+      document.addEventListener("touchstart", start, opts);
+      document.addEventListener("click", start, opts);
 
-    return tryImmediate();
-  }, []);
+      // definimos cleanup síncrono
+      removeListeners = () => {
+        document.removeEventListener("touchstart", start);
+        document.removeEventListener("click", start);
+      };
+    }
+  };
+
+  // llamamos sin devolver la promise
+  tryImmediate();
+
+  // cleanup síncrono correcto
+  return () => {
+    if (removeListeners) removeListeners();
+  };
+}, []);
 
   // >>> agregado: estado del modal de datos bancarios
   const [bankOpen, setBankOpen] = React.useState(false)
@@ -376,3 +505,4 @@ function Card({ icon, title, text, button, link }) {
     </section>
   )
 }
+
