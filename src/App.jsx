@@ -106,6 +106,7 @@ function OriginalApp() {
   }, []);
 
   const [bankOpen, setBankOpen] = React.useState(false)
+  const [tutorialOpen, setTutorialOpen] = React.useState(false) // <-- agregado
 
   return (
     <div className="overflow-hidden min-h-screen">
@@ -172,8 +173,8 @@ function OriginalApp() {
           </div>
           <div className="overflow-hidden w-full">
             <div className="flex animate-scroll m-2 flex-shrink-0 h-full w-[250px]">
-              {[...Array(2)].flatMap(() => [16, 17, 18, 19, 20, 21]).map((n, i) => (
-                <img key={i} src={`/img/${n}.png`} alt="Imagen" className="m-2 rounded-md" />
+              {[...Array(2)].flatMap(() => [16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28]).map((n, i) => (
+                <img key={i} src={`/img/${n}.jpg`} alt="Imagen" className="m-2 rounded-md" />
               ))}
             </div>
           </div>
@@ -203,7 +204,7 @@ function OriginalApp() {
         <div className="flex flex-col justify-center items-center text-center p-8">
           <img src="/img/f.apng" alt="Icono Regalos" className="w-20 h-20" />
           <h2 className="text-[#333333] text-center mt-2 text-lg font-principal pb-3">
-            Si deseás hacernos un regalo, además de tu hermosa presencia...
+            Ya tenemos vajilla, licuadora y hasta tostadora… <br /> Por eso si queres hacernos un regalo podés ayudarnos con la luna de miel, y ser parte de nuestro viaje :)
           </h2>
           <button
             onClick={() => setBankOpen(true)}
@@ -215,8 +216,8 @@ function OriginalApp() {
 
       {/* Galería */}
       <div className="max-w-3xl mx-auto grid grid-cols-2 gap-4 md:gap-x-1 md:gap-y-4 p-4">
-        {[12, 13, 14, 15, 16, 17].map(n => (
-          <img key={n} src={`/img/${n}.png`} alt="Imagen" className="rounded-md cursor-pointer hover:scale-105 transition mx-auto w-auto h-auto md:h-60" />
+        {[10, 11, 12, 13, 14, 15].map(n => (
+          <img key={n} src={`/img/${n}.jpg`} alt="Imagen" className="rounded-md cursor-pointer hover:scale-105 transition mx-auto w-auto h-auto md:h-60" />
         ))}
       </div>
 
@@ -240,10 +241,10 @@ function OriginalApp() {
         <div className="flex flex-col justify-center items-center text-center p-8">
           <img src="/img/asistencia.apng" className="w-[70px] h-[70px]" />
           <div className="relative z-10 text-[#333]">
-             <h4 className="text-[#333333] text-lg font-principal uppercase font-semibold pb-1 text-center">CONFIRMACIÓN DE ASISTENCIA</h4>
+            <h4 className="text-[#333333] text-lg font-principal uppercase font-semibold pb-1 text-center">CONFIRMACIÓN DE ASISTENCIA</h4>
             <h2 className="text-xl pt-2 pb-1 font-principal">¡Decile <span className="text-xl uppercase">"Sí acepto"</span> <br /> a nuestra invitación!</h2>
-            <a href="https://example.com/rsvp" target="_blank" rel="noopener noreferrer"
-              className="mt-3 inline-block bg-primario text-white font-principal uppercase rounded-xl text-[12px] py-2 px-2 w-60 hover:bg-terciario text-center">
+            <a href="https://docs.google.com/forms/d/1_FUmFUrmEmhXcNydf21CsXzmu2ZkJ46d3IBZtyDM-C0/viewform?edit_requested=true" target="_blank" rel="noopener noreferrer"
+              className="mt-3 inline-block bg-primario text-white font-principal uppercase rounded-xl text-[18px] py-2 px-2 w-60 hover:bg-terciario text-center">
               ¡Confirmar Asistencia!
             </a>
           </div>
@@ -275,46 +276,70 @@ function OriginalApp() {
             const os = getMobileOS()
             if (os === "Android") {
               return (
-                <a
-                  href={DOTS_ANDROID}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-terciario text-white hover:bg-primario rounded-xl text-sm uppercase py-2 px-2 w-60 inline-block text-center"
-                >
-                  Descargar en Google Play
-                </a>
+                <>
+                  <a
+                    href={DOTS_ANDROID}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-terciario text-white hover:bg-primario rounded-xl text-sm uppercase py-2 px-2 w-60 inline-block text-center"
+                  >
+                    Descargar en Google Play
+                  </a>
+                  <button
+                    onClick={() => setTutorialOpen(true)}
+                    className="bg-terciario text-white hover:bg-primario rounded-xl text-sm uppercase py-2 px-2 w-60 mt-2 inline-block text-center"
+                  >
+                    Mirá como usar la app
+                  </button>
+                </>
               )
             }
             if (os === "iOS") {
               return (
-                <a
-                  href={DOTS_IOS}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-terciario text-white hover:bg-primario rounded-xl text-sm uppercase py-2 px-2 w-60 inline-block text-center"
-                >
-                  Descargar en App Store
-                </a>
+                <>
+                  <a
+                    href={DOTS_IOS}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-terciario text-white hover:bg-primario rounded-xl text-sm uppercase py-2 px-2 w-60 inline-block text-center"
+                  >
+                    Descargar en App Store
+                  </a>
+                  <button
+                    onClick={() => setTutorialOpen(true)}
+                    className="bg-terciario text-white hover:bg-primario rounded-xl text-sm uppercase py-2 px-2 w-60 mt-2 inline-block text-center"
+                  >
+                    Mirá como usar la app
+                  </button>
+                </>
               )
             }
             return (
-              <div className="flex gap-4 mt-2">
-                <a
-                  href={DOTS_ANDROID}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-terciario text-white hover:bg-primario rounded-xl text-sm uppercase py-2 px-2 w-40 inline-block text-center"
+              <div className="flex flex-col gap-2 mt-2 items-center">
+                <div className="flex gap-4">
+                  <a
+                    href={DOTS_ANDROID}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-terciario text-white hover:bg-primario rounded-xl text-sm uppercase py-2 px-2 w-40 inline-block text-center"
+                  >
+                    Google Play
+                  </a>
+                  <a
+                    href={DOTS_IOS}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-terciario text-white hover:bg-primario rounded-xl text-sm uppercase py-2 px-2 w-40 inline-block text-center"
+                  >
+                    App Store
+                  </a>
+                </div>
+                <button
+                  onClick={() => setTutorialOpen(true)}
+                  className="bg-terciario text-white hover:bg-primario rounded-xl text-sm uppercase py-2 px-2 w-60 mt-2 inline-block text-center"
                 >
-                  Google Play
-                </a>
-                <a
-                  href={DOTS_IOS}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-terciario text-white hover:bg-primario rounded-xl text-sm uppercase py-2 px-2 w-40 inline-block text-center"
-                >
-                  App Store
-                </a>
+                  Mirá como usar la app
+                </button>
               </div>
             )
           })()}
@@ -323,7 +348,7 @@ function OriginalApp() {
 
       {/* Imagen completa */}
       <section>
-        <img src="/img/webp/f9.png" alt="Cami Minnie y Milton Mickey" className="w-full" />
+        <img src="/img/webp/f9.jpg" alt="Cami Minnie y Milton Mickey" className="w-full" />
       </section>
 
       {/* Gracias */}
@@ -348,6 +373,39 @@ function OriginalApp() {
             </div>
             <button
               onClick={() => setBankOpen(false)}
+              className="mt-4 bg-terciario hover:bg-primario text-white px-4 py-2 rounded-lg"
+            >
+              Cerrar
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Modal tutorial: "Cómo usar la app" */}
+      {tutorialOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full text-center">
+            <h2 className="text-lg font-bold mb-4 text-[#333]">Cómo usar la app</h2>
+            <div className="text-left text-[#333] space-y-2">
+              <p>
+                1) Una vez que hayas descargado la app, entrá a nuestro álbum clickeando{" "}
+                <a
+                  href="https://web.dotstheapp.com/a?group=2110936&code=BKgg1j2W&dlBy=camilacergneux&utm_source=guest&utm_medium=share&utm_campaign=guest_event_album&force_app=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline text-primario hover:text-terciario"
+                >
+                  acá
+                </a>
+                .
+              </p>
+              <br />
+              <p>
+                2) Usa este código de acceso para poder entrar: <b>BKgg1j2W</b>
+              </p>
+            </div>
+            <button
+              onClick={() => setTutorialOpen(false)}
               className="mt-4 bg-terciario hover:bg-primario text-white px-4 py-2 rounded-lg"
             >
               Cerrar
@@ -383,6 +441,12 @@ function FechaCountdown() {
               </div>
             </div>
           </div>
+        </div>
+        <div className="text-center mt-8">
+          <a href="https://calendar.app.google/McKqMvBMhrkTzG9V9" target="_blank" rel="noopener noreferrer"
+            className="bg-terciario text-white hover:bg-primario rounded-xl text-sm uppercase py-2 px-2 w-60 inline-block text-center">
+            Agendá la fecha
+          </a>
         </div>
       </div>
     </section>
