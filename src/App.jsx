@@ -401,7 +401,11 @@ function OriginalApp() {
               </p>
               <br />
               <p>
-                2) Usa este código de acceso para poder entrar: <b>BKgg1j2W</b>
+                2) Crea tu cuenta usando google, o con tu email.
+              </p>
+              <br />
+              <p>
+                3) Con tu cuenta ya creada, usa este código de acceso para poder entrar: <b>BKgg1j2W</b>
               </p>
             </div>
             <button
