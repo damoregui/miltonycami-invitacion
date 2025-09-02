@@ -202,7 +202,7 @@ function OriginalApp() {
       {/* Regalos */}
       <section className="max-w-full bg-[#f0ebe4]" data-animate="reveal" style={{ '--reveal-transform': 'translateX(100px)' }}>
         <div className="flex flex-col justify-center items-center text-center p-8">
-          <img src="/img/f.apng" alt="Icono Regalos" className="w-20 h-20" />
+          <img src="/img/f.png" alt="Icono Regalos" className="w-20 h-20" />
           <h2 className="text-[#333333] text-center mt-2 text-lg font-principal pb-3">
             Ya tenemos vajilla, licuadora y hasta tostadora… <br /> Por eso si queres hacernos un regalo podés ayudarnos con la luna de miel, y ser parte de nuestro viaje :)
           </h2>
@@ -224,7 +224,7 @@ function OriginalApp() {
       {/* Instagram */}
       <section className="max-w-full bg-[#f0ebe4]" data-animate="reveal" style={{ '--reveal-transform': 'translateX(-100px)' }}>
         <div className="flex flex-col justify-center items-center text-center p-8 rounded-lg">
-          <img src="/img/adelantos.apng" className="w-[60px] h-[60px] mb-2" alt="Adelantos icon" />
+          <img src="/img/adelantos.png" className="w-[60px] h-[60px] mb-2" alt="Adelantos icon" />
           <h4 className="text-[#333333] text-lg font-principal uppercase font-semibold pb-1 text-center">@milycami14.02.26</h4>
           <p className="text-[#333333] px-2 text-lg font-principal pb-4">¡Preparate para este fiestón!<br />
             Seguinos en nuestra cuenta para ver todas las novedades del casamiento <br />
@@ -239,7 +239,7 @@ function OriginalApp() {
       {/* Asistencia */}
       <section className="max-w-full relative w-full" data-animate="reveal" style={{ '--reveal-transform': 'scale(0.85)' }}>
         <div className="flex flex-col justify-center items-center text-center p-8">
-          <img src="/img/asistencia.apng" className="w-[70px] h-[70px]" />
+          <img src="/img/asistencia.png" className="w-[70px] h-[70px]" />
           <div className="relative z-10 text-[#333]">
             <h4 className="text-[#333333] text-lg font-principal uppercase font-semibold pb-1 text-center">CONFIRMACIÓN DE ASISTENCIA</h4>
             <h2 className="text-xl pt-2 pb-1 font-principal">¡Decile <span className="text-xl uppercase">"Sí acepto"</span> <br /> a nuestra invitación!</h2>
@@ -254,7 +254,7 @@ function OriginalApp() {
       {/* Playlist */}
       <section className="max-w-full bg-[#f9f6f3]" data-animate="reveal" style={{ '--reveal-transform': 'translateX(100px)' }}>
         <div className="flex flex-col justify-center items-center text-center p-8">
-          <img src="/img/playlist.apng" alt="Icono de Musica" className="h-[70px] w-[70px]" />
+          <img src="/img/playlist.png" alt="Icono de Musica" className="h-[70px] w-[70px]" style={{'marginBottom': '1rem'}} />
           <p className="text-lg font-principal pb-1 font-semibold text-[#333333] text-center">¡Queremos armar la playlist perfecta!</p>
           <p className="text-lg font-principal pb-4 text-[#333333]">Decinos cuales son las canciones que no pueden faltar en la fiesta</p>
           <a href="https://open.spotify.com/playlist/7hEad2gsIbbyM2AcSOaice?si=swy3KCSfRS6V2ypYFKNYEw&pi=RkKt2fiHSEG6S" target="_blank" rel="noopener noreferrer"
@@ -267,7 +267,7 @@ function OriginalApp() {
       {/* Subir fotos -> con redirección a la tienda correspondiente */}
       <section className="max-w-full bg-[#f0ebe4]" data-animate="reveal" style={{ '--reveal-transform': 'translateX(-100px)' }}>
         <div className="flex justify-center items-center text-center flex-col p-8">
-          <img src="/img/foto.apng" alt="Icono fotos" className="w-[70px] h-[70px]" />
+          <img src="/img/foto.png" alt="Icono fotos" className="w-[70px] h-[70px]" style={{'marginBottom': '1rem'}} />
           <p className="text-[#333333] text-lg font-principal font-semibold pb-1 text-center">
             Bajate la aplicación Dots Memories y compartí con nosotros tus fotos y videos del gran día
           </p>
