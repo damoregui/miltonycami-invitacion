@@ -229,7 +229,7 @@ function OriginalApp() {
           <p className="text-[#333333] px-2 text-lg font-principal pb-4">¡Preparate para este fiestón!<br />
             Seguinos en nuestra cuenta para ver todas las novedades del casamiento <br />
             y etiquetarnos en tus fotos y videos</p>
-          <a href="https://www.instagram.com/milycami14.02.26/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noopener noreferrer"
+          <a href="https://www.instagram.com/milycami14.02.26" target="_blank" rel="noopener noreferrer"
             className="bg-terciario text-white hover:bg-primario rounded-xl text-sm uppercase py-2 px-2 w-60 inline-block text-center">
             Ver Instagram
           </a>
