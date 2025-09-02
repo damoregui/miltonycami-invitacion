@@ -224,7 +224,7 @@ function OriginalApp() {
       {/* Instagram */}
       <section className="max-w-full bg-[#f0ebe4]" data-animate="reveal" style={{ '--reveal-transform': 'translateX(-100px)' }}>
         <div className="flex flex-col justify-center items-center text-center p-8 rounded-lg">
-          <img src="/img/adelantos.png" className="w-[60px] h-[60px] mb-2" alt="Adelantos icon" />
+          <img src="/img/adelantos.png" className="w-[60px] h-[60px]" alt="Adelantos icon" />
           <h4 className="text-[#333333] text-lg font-principal uppercase font-semibold pb-1 text-center">@milycami14.02.26</h4>
           <p className="text-[#333333] px-2 text-lg font-principal pb-4">¡Preparate para este fiestón!<br />
             Seguinos en nuestra cuenta para ver todas las novedades del casamiento <br />
