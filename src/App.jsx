@@ -405,7 +405,7 @@ function OriginalApp() {
               </p>
               <br />
               <p>
-                3) Con tu cuenta ya creada, usa este código de acceso para poder entrar: <b>BKgg1j2W</b>
+                3) Empezá a subir tus fotos y videos al álbum.
               </p>
             </div>
             <button
