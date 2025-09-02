@@ -158,7 +158,7 @@ function OriginalApp() {
       {/* Ceremonia / Celebración */}
       <section className="pt-8 pb-8 flex flex-col justify-center items-center bg-[#f9f6f3] max-w-full">
         <div data-animate="reveal" style={{ '--reveal-transform': 'translateX(-100px)' }}>
-          <Card icon="/img/copas.apng" title="CEREMONIA Y FIESTA"
+          <Card icon="/img/copas.png" title="CEREMONIA Y FIESTA"
             text="Te esperamos para celebrar en el Salón Las Lilas a las 19.00hs
             (importante ser super puntuales, la novia entra 19.30hs!!)."
             link="https://maps.app.goo.gl/Aea5oom663xVbsnd8" button="Llegar al salón" />
@@ -194,7 +194,7 @@ function OriginalApp() {
           <div className="pt-2"><img src="/img/linea.png" className="w-[1000px] h-[10px]" /></div>
           <div className="pt-1">
             <p className="text-lg pt-1 text-center text-[#333333] font-principal">DRESSCODE</p>
-            <p className="text-lg pt-1 text-center text-[#333333] uppercase font-semibold font-principal">Formal, elegante. <br /> Pero no te olvides de traer zapatillas para la hora de bailar ;)</p>
+            <p className="text-lg pt-1 text-center text-[#333333] font-semibold font-principal">Formal, elegante. <br /> Pero no te olvides de traer zapatillas para la hora de bailar ;)</p>
           </div>
         </div>
       </section>
