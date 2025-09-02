@@ -366,10 +366,10 @@ function OriginalApp() {
           <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full text-center">
             <h2 className="text-lg font-bold mb-4 text-[#333]">Datos Bancarios</h2>
             <div className="text-left text-[#333] space-y-1">
-              <p><strong>Titular:</strong> Guido DAmore</p>
-              <p><strong>Alias:</strong> guido.pitolargo</p>
-              <p><strong>CBU:</strong> 1234567890123456789012</p>
-              <p><strong>Banco:</strong> Banco de pitos largos</p>
+              <p><strong>Titular:</strong> Camila Cergneux</p>
+              <p><strong>Alias:</strong> camicergneux.mp</p>
+              <p><strong>CBU:</strong> 0000003100086364210198</p>
+              <p><strong>Banco:</strong> Mercado Pago</p>
             </div>
             <button
               onClick={() => setBankOpen(false)}
