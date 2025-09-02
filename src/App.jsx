@@ -447,7 +447,7 @@ function FechaCountdown() {
           </div>
         </div>
         <div className="text-center mt-8">
-          <a href="https://calendar.app.google/McKqMvBMhrkTzG9V9" target="_blank" rel="noopener noreferrer"
+          <a href="https://calendar.app.google/PwE2HYHMTUQGFv2N7" target="_blank" rel="noopener noreferrer"
             className="bg-terciario text-white hover:bg-primario rounded-xl text-sm uppercase py-2 px-2 w-60 inline-block text-center">
             Agendá la fecha
           </a>
