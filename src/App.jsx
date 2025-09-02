@@ -225,11 +225,11 @@ function OriginalApp() {
       <section className="max-w-full bg-[#f0ebe4]" data-animate="reveal" style={{ '--reveal-transform': 'translateX(-100px)' }}>
         <div className="flex flex-col justify-center items-center text-center p-8 rounded-lg">
           <img src="/img/adelantos.apng" className="w-[60px] h-[60px] mb-2" alt="Adelantos icon" />
-          <h4 className="text-[#333333] text-lg font-principal uppercase font-semibold pb-1 text-center">@bodaCamiMilton</h4>
+          <h4 className="text-[#333333] text-lg font-principal uppercase font-semibold pb-1 text-center">@milycami14.02.26</h4>
           <p className="text-[#333333] px-2 text-lg font-principal pb-4">¡Preparate para este fiestón!<br />
             Seguinos en nuestra cuenta para ver todas las novedades del casamiento <br />
             y etiquetarnos en tus fotos y videos</p>
-          <a href="https:www.instagram.com/camicergneux/" target="_blank" rel="noopener noreferrer"
+          <a href="https://www.instagram.com/milycami14.02.26/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noopener noreferrer"
             className="bg-terciario text-white hover:bg-primario rounded-xl text-sm uppercase py-2 px-2 w-60 inline-block text-center">
             Ver Instagram
           </a>
