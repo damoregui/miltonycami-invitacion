@@ -159,10 +159,15 @@ function OriginalApp() {
       <section className="pt-8 pb-8 flex flex-col justify-center items-center bg-[#f9f6f3] max-w-full">
         <div data-animate="reveal" style={{ '--reveal-transform': 'translateX(-100px)' }}>
           <Card icon="/img/copas.png" title="CEREMONIA Y FIESTA"
-            text="Te esperamos para celebrar en el Salón Las Lilas a las 19.00hs
-            (importante ser super puntuales, la novia entra 19.30hs!!)."
+            text="
+            Sábado 14 de Febrero 2026, 19hs.
+            Importante ser puntuales!
+            
+            Salón Las Lilas
+            BV. Ricardo Balbín 2669"
+          
             link="https://maps.app.goo.gl/Aea5oom663xVbsnd8" button="Llegar al salón" />
-        </div>
+        </div>       
       </section>
 
       {/* Nuestra historia */}
@@ -193,8 +198,8 @@ function OriginalApp() {
           <img src="/img/code.png" alt="Codigo de Vestimenta" className="w-16 h-16" />
           <div className="pt-2"><img src="/img/linea.png" className="w-[1000px] h-[10px]" /></div>
           <div className="pt-1">
-            <p className="text-lg pt-1 text-center text-[#333333] font-principal">DRESSCODE</p>
-            <p className="text-lg pt-1 text-center text-[#333333] font-semibold font-principal">Formal, elegante. <br /> Pero no te olvides de traer zapatillas para la hora de bailar ;)</p>
+            <p className="text-lg pt-1 text-center text-[#333333] font-principal">DRESSCODE FORMAL</p>
+            <p className="text-lg pt-1 text-center text-[#333333] font-semibold font-principal">No te olvides de traer zapatillas para la hora de bailar ;)</p>
           </div>
         </div>
       </section>
@@ -242,7 +247,7 @@ function OriginalApp() {
           <img src="/img/asistencia.png" className="w-[70px] h-[70px]" />
           <div className="relative z-10 text-[#333]">
             <h4 className="text-[#333333] text-lg font-principal uppercase font-semibold pb-1 text-center">CONFIRMACIÓN DE ASISTENCIA</h4>
-            <h2 className="text-xl pt-2 pb-1 font-principal">¡Decile <span className="text-xl uppercase">"Sí acepto"</span> <br /> a nuestra invitación!</h2>
+            <h2 className="text-xl pt-2 pb-1 font-principal">¡Decile <span className="text-xl uppercase">"Sí acepto"</span> <br /> a nuestra invitación antes del 31 de diciembre!</h2>
             <a href="https://docs.google.com/forms/d/1_FUmFUrmEmhXcNydf21CsXzmu2ZkJ46d3IBZtyDM-C0/viewform?edit_requested=true" target="_blank" rel="noopener noreferrer"
               className="mt-3 inline-block bg-primario text-white font-principal uppercase rounded-xl text-[18px] py-2 px-2 w-60 hover:bg-terciario text-center">
               ¡Confirmar Asistencia!
@@ -355,7 +360,7 @@ function OriginalApp() {
       <section className="bg-primario max-w-full" data-animate="reveal">
         <div className="flex flex-col justify-center items-center text-center p-8">
           <p className="text-white text-lg font-principal tracking-wide">
-            ¡Gracias por ser parte de este capitulo tan importante de nuestras vidas!
+            ¡Gracias por ser parte de este momento importante de nuestras vidas!
           </p>
         </div>
       </section>
@@ -470,12 +475,24 @@ function Sep() { return <div className="flex flex-col items-center"><span classN
 function Card({ icon, title, text, button, link }) {
   return (
     <section className="flex flex-col items-center justify-center text-center px-10 py-5">
-      <div><img src={icon} alt={title} className="w-[70px] h-[70px]" /></div>
-      <div className="text-center"><p className="text-[#333] font-principal uppercase text-xl pb-1 pt-2">{title}</p></div>
+      <div>
+        <img src={icon} alt={title} className="w-[70px] h-[70px]" />
+      </div>
+      <div className="text-center">
+        <p className="text-[#333] font-principal uppercase text-xl pb-1 pt-2">
+          {title}
+        </p>
+      </div>
       <div className="flex flex-col justify-center items-center text-center">
-        <p className="pb-3 text-[#333333] font-principal text-lg">{text}</p>
-        <a href={link} target="_blank" rel="noopener noreferrer"
-          className="bg-terciario text-white hover:bg-primario rounded-xl mt-2 text-sm uppercase py-2 px-2 w-60 inline-block text-center">
+        <p className="pb-3 text-[#333333] font-principal text-lg whitespace-pre-line">
+          {text}
+        </p>
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-terciario text-white hover:bg-primario rounded-xl mt-2 text-sm uppercase py-2 px-2 w-60 inline-block text-center"
+        >
           {button}
         </a>
       </div>

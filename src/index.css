@@ -137,3 +137,7 @@ html {
 .mb-2{
   margin-bottom: 1rem;
 }
+
+.card-text {
+  white-space: pre-line;
+}
