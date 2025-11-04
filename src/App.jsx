@@ -248,7 +248,7 @@ function OriginalApp() {
           <div className="relative z-10 text-[#333]">
             <h4 className="text-[#333333] text-lg font-principal uppercase font-semibold pb-1 text-center">CONFIRMACIÓN DE ASISTENCIA</h4>
             <h2 className="text-xl pt-2 pb-1 font-principal">¡Decile <span className="text-xl uppercase">"Sí acepto"</span> <br /> a nuestra invitación antes del 30 de noviembre!</h2>
-            <a href="https://docs.google.com/forms/d/1_FUmFUrmEmhXcNydf21CsXzmu2ZkJ46d3IBZtyDM-C0/viewform?edit_requested=true" target="_blank" rel="noopener noreferrer"
+            <a href="https://open.spotify.com/playlist/7hEad2gsIbbyM2AcSOaice?si=b5ca5e62decc4e52&pt=1077af53a8a5c4be00183e001282db82" target="_blank" rel="noopener noreferrer"
               className="mt-3 inline-block bg-primario text-white font-principal uppercase rounded-xl text-[18px] py-2 px-2 w-60 hover:bg-terciario text-center">
               ¡Confirmar Asistencia!
             </a>
