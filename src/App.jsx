@@ -262,7 +262,7 @@ function OriginalApp() {
           <img src="/img/playlist.png" alt="Icono de Musica" className="h-[70px] w-[70px]" style={{'marginBottom': '1rem'}} />
           <p className="text-lg font-principal pb-1 font-semibold text-[#333333] text-center">¡Queremos armar la playlist perfecta!</p>
           <p className="text-lg font-principal pb-4 text-[#333333]">Decinos cuales son las canciones que no pueden faltar en la fiesta</p>
-          <a href="https://open.spotify.com/playlist/7hEad2gsIbbyM2AcSOaice?si=swy3KCSfRS6V2ypYFKNYEw&pi=RkKt2fiHSEG6S" target="_blank" rel="noopener noreferrer"
+          <a href="https://open.spotify.com/playlist/7hEad2gsIbbyM2AcSOaice?si=6c44078c83a24d6b&pt=f4f727da936ac37d711c322d828b1731" target="_blank" rel="noopener noreferrer"
             className="bg-terciario text-white hover:bg-primario rounded-xl text-sm uppercase py-2 px-2 w-60 inline-block text-center">
             Sugerir canción
           </a>
