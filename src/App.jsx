@@ -452,12 +452,6 @@ function FechaCountdown() {
             </div>
           </div>
         </div>
-        <div className="text-center mt-8">
-          <a href="https://calendar.app.google/tWqMdj4vvMi39tAE7" target="_blank" rel="noopener noreferrer"
-            className="bg-terciario text-white hover:bg-primario rounded-xl text-sm uppercase py-2 px-2 w-60 inline-block text-center">
-            Agendá la fecha
-          </a>
-        </div>
       </div>
     </section>
   )
